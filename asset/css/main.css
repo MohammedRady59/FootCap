@@ -1,0 +1,296 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --main-color: #0d6efd;
+  --white-color: #ffffff;
+  --logo-color: #ff6f61;
+  --sections-color: #f5f5f5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+nav {
+  background-color: var(--white-color);
+}
+
+.nav-item a {
+  color: black;
+  font-weight: 400;
+
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.nav-item a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background-color: var(--logo-color);
+  transition: left 0.5s;
+}
+.navbar .nav-item .nav-link.active::before {
+  background-color: var(--logo-color);
+  left: 0;
+}
+.nav-item a:hover {
+  color: black;
+}
+.nav-item a:hover::before {
+  left: 0;
+}
+
+/* Home */
+.home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.01) 0% 100%),
+    url('../images/hero-banner.png');
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+}
+.homeDetail,
+.expolreDetail,
+.bestProduct,
+.nowDetail,
+.fourIcon,
+.download {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.homeDetail .homeBtn {
+  background-color: var(--logo-color);
+}
+.expolreDetail {
+  background-image: url(../images/collection-1.jpg);
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s;
+}
+
+.expolreDetail2 {
+  background-image: url(../images/collection-2.jpg);
+}
+.expolreDetail3 {
+  background-image: url(../images/collection-3.jpg);
+}
+/* Best proudct */
+.bestProduct .select button {
+  font-family: 'Roboto', sans-serif;
+}
+.btn.active {
+  background-color: #ff6f61 !important;
+  color: var(--white-color);
+  border: none;
+}
+.bestProduct .icons {
+  position: absolute;
+  right: -100%;
+  top: 2%;
+  transition: right 0.5s 0.2s;
+}
+.icons i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+  background-color: var(--white-color);
+}
+
+.imgProuct:hover .icons {
+  right: 5%;
+}
+.icons i:hover {
+  background-color: var(--logo-color);
+  color: white;
+  cursor: pointer;
+}
+.bestProduct .cards {
+  background-color: var(--white-color);
+}
+.bestProduct .cards .price {
+  color: var(--logo-color);
+}
+.cards img {
+  transition: all 0.5s;
+}
+.cards:hover img {
+  transform: scale(1.1);
+}
+
+/* Shop */
+
+.nowDetail {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0% 100%),
+    url('../images/cta-1.jpg');
+  background-size: cover;
+  color: var(--white-color);
+}
+.nowDetail2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0% 100%),
+    url('../images/cta-2.jpg');
+}
+.nowDetail a {
+  font-family: 'Roboto', sans-serif;
+}
+.nowDetail a:hover {
+  border-bottom: none !important;
+}
+/* Four icon */
+.fourIcon .myIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--logo-color);
+  border: 10px solid rgb(0 0 0/0.2);
+}
+.myIcon i {
+  color: var(--white-color);
+  font-size: 30px;
+}
+.fourIcon .myIcon:hover {
+  background-color: black;
+}
+.fourIcon .myIcon:hover i {
+  color: var(--white-color);
+}
+/* .owl-carousel .owl-item img {
+  width: fit-content;
+} */
+.owl-item {
+  width: fit-content !important;
+}
+.cardInsta .ovelay {
+  transform: translateY(100%);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(0 0 0/ 0.4);
+  transition: transform 0.5s;
+}
+.cardInsta:hover .ovelay {
+  transform: translateY(0);
+  cursor: grab;
+}
+/* reviewDetail */
+.reviewDetail {
+  background-color: rgb(238, 238, 238);
+  height: 110px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 1s;
+}
+.reviewDetail img {
+  width: 80px;
+}
+.reviewDetail.expand {
+  height: auto;
+}
+.reviewDetail .moveDown {
+  transition: all 1s;
+  opacity: 0;
+  max-height: 0;
+}
+.reviewDetail.expand .moveDown {
+  opacity: 1;
+  max-height: 200px;
+}
+/* DownLaod */
+.download .downdetail h3 {
+  border-left: 2px solid var(--logo-color);
+  padding: 18px;
+  position: relative;
+}
+.download .downdetail h3::before {
+  content: '';
+  position: absolute;
+  background-color: var(--logo-color);
+  width: 6%;
+  height: 3%;
+  top: 3px;
+  left: -3px;
+  transform: rotate(-160deg);
+}
+.download .downdetail h3::after {
+  content: '';
+  position: absolute;
+  background-color: var(--logo-color);
+  width: 6%;
+  height: 3%;
+  bottom: 3px;
+  left: -3px;
+  transform: rotate(160deg);
+  -webkit-transform: rotate(160deg);
+  -moz-transform: rotate(160deg);
+  -ms-transform: rotate(160deg);
+  -o-transform: rotate(160deg);
+}
+.download .downdetail h3 span {
+  color: var(--logo-color);
+}
+.download .apps {
+  background-color: var(--white-color);
+  border: 1px solid black;
+  transition: all 0.3s;
+}
+.download .apps:hover {
+  background-color: var(--logo-color);
+  color: white;
+  cursor: pointer;
+}
+.download .myCircle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--logo-color);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.445);
+}
+.download .myphotoapp {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+.download .myphotoapp img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+/* Footer */
+.footer {
+  padding: 0;
+}
+.footer svg {
+  transform: translateY(10px);
+}
+
+.footer .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--logo-color);
+}
+.social a {
+  color: white;
+  font-size: 35px;
+  margin: 10px;
+}
+.send {
+  background-color: var(--logo-color);
+  color: var(--white-color);
+}
